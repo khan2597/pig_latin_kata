@@ -8,7 +8,12 @@
 # Still assume the words are lowercase.
 
 def pig_latin(word)
-
+    if word.start_with?(/[aieou]/)
+        word + "way"
+    else
+        n = word.index(/[aieou]/)
+        word.split("")[n..-1].join + word.split("")[0...n].join + "ay"
+    end
 end
 
 ## Tests:
